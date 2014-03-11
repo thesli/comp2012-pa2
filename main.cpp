@@ -202,13 +202,10 @@ int main() {
 
 	cout << "From sample.txt (2 duplicated items): " << endl;
 	StringSet set9FromSample = readSetFromFile("sample.txt");
-	// cout << set9FromSample.getItem(0) << endl;
-	// cout << set9FromSample.getItem(1) << endl;
-	// cout << set9FromSample.getItem(2) << endl;	
-	set9FromSample.sort();
+	// set9FromSample.sort();
 	printSetSizeAndCapacity(set9FromSample);
 	printSetContent(set9FromSample);
-	writeSetToFile("output_sample.txt", set9FromSample);
+	// writeSetToFile("output_sample.txt", set9FromSample);
 
 	/*
 

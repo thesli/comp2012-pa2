@@ -9,6 +9,7 @@
 
 #include "stringset.h"
 #include <string.h>
+#include <stdlib.h>
 using namespace std;
 
 void toString(StringSet strset){
@@ -242,7 +243,7 @@ StringSet operator-(const StringSet& first, const StringSet& second){
 	StringSet result = (secondClone-=firstClone);		
 	return result;
 }
-std::ostream& operator<< (std::ostream& out, const StringSet& inputSet){	
+std::ostream& operator<< (std::ostream& out, const StringSet& inputSet){
 	out << "{" ;
 	for (int i = 0; i < inputSet.getSize(); i++)
 	{
@@ -261,15 +262,20 @@ StringSet readSetFromFile(const char fileName[]){
 	StringSet strset;
 	string str;
 	getline(ifs,str);
-	int k = 0;
-	while(getline(ifs,str)){
-		printf("%d%s\n",k,str.c_str());
-		strset.insert(str.c_str());
-		k++;
+	int linecount = atoi(str.c_str());	
+	string* strArr = new string[linecount];
+	for (int i = 0; i < linecount; ++i)
+	{
+		getline(ifs,str);
+		strArr[i] = str;
 	}
 	ifs.close();
+	for (int i = 0; i < linecount; ++i)
+	{
+		strset.insert(strArr[i]);
+	}
 	return strset;
 }
 void writeSetToFile(const char fileName[], const StringSet& s){
-
+	ofstream ofs;
 }
