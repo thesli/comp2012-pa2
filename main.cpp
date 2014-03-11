@@ -81,7 +81,7 @@ int main() {
 	set4.sort();
 	printSetContent(set4);
 	cout << "Remove " << strJohn << " ? " << boolToStr( set4.remove(strJohn) ) << endl;
-	cout << "Remove " << strMary << " ? " << boolToStr( set4.remove(strMary) ) << endl;
+	cout << "Remove " << strMary << " ? " << boolToStr( set4.remove(strMary) ) << endl;	
 	set4.sort();
 	printSetContent(set4);
 
@@ -127,7 +127,7 @@ int main() {
 	StringSet setUnion, setInter, setDiff;
 
 	setUnion = set6a;
-	setUnion += set6b;
+	setUnion += set6b;	
 
 	setInter = set6a;
 	setInter ^= set6b;
@@ -155,7 +155,7 @@ int main() {
 	cout << "Set B ";
 	printSetContent(set7b);
 
-	setUnion = set7b + set7a ;
+	setUnion = set7b + set7a ;	
 	setInter = set7b ^ set7a ;
 	setDiff = set7b - set7a ;
 
@@ -202,6 +202,9 @@ int main() {
 
 	cout << "From sample.txt (2 duplicated items): " << endl;
 	StringSet set9FromSample = readSetFromFile("sample.txt");
+	// cout << set9FromSample.getItem(0) << endl;
+	// cout << set9FromSample.getItem(1) << endl;
+	// cout << set9FromSample.getItem(2) << endl;	
 	set9FromSample.sort();
 	printSetSizeAndCapacity(set9FromSample);
 	printSetContent(set9FromSample);
